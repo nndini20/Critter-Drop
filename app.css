@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+@import './animations.css';
+@import './pixel-effects.css';
+
+/* General styles */
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #7BA3C9;
+}
+
+/* Pixel art effects */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.2; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pixel-shine {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes screen-flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.97; }
+  15% { opacity: 0.95; }
+  20% { opacity: 0.97; }
+  100% { opacity: 0.97; }
+}
+
+@keyframes coin-drop {
+  0% { transform: translateY(-30px); }
+  100% { transform: translateY(50px); }
+}
+
+/* Specific element styles */
+.vending-button {
+  transition: all 0.15s ease;
+}
+
+.vending-button:active {
+  transform: scale(0.95);
+}
+
+.vending-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vending-screen {
+  animation: screen-flicker 5s infinite;
+}
+
+.machine-glow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
